@@ -91,7 +91,7 @@ app.get('/api/projects', (req, res) => {
     params = tagList;
   } else {
     // No tag filter - return everything
-    query = `SELECT * FROM projects`;
+    query = `SELECT * FROM projects p`;
   }
 
   // Append ORDER BY clause based on the sort parameter
