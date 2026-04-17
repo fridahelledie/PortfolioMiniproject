@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home page</title>
+
+</head>
+<body>
+
+  <h1>DB Response Example</h1>
+  <p id='db-resp'></p>
+
+  <script> 
+    fetch('/api/projects')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('db-resp').innerHTML = html;
+      });
+  </script>
+</body>
+</html>
