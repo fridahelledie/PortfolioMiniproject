@@ -4,6 +4,7 @@ $(document).ready(function () {
   // click handler for dynamically added paragraphs/tags boxes
     $('#tag_selection').on('click', 'p', function () {
       $(this).toggleClass('chosen');
+	  loadProjects(); //reload based on selected tags
     });
 	
 	
@@ -15,4 +16,71 @@ $(document).ready(function () {
 		});
 
 	});
+	
+	
+	//sort change handler
+	$('#sort_select').on('change', function () {
+		loadProjects();
+	});
+
+	
+	 // Initial load (no tags selected → all projects)
+	loadProjects();
+
+	
   });
+  
+  
+  function loadProjects() {
+	//get all chosen tags
+	const selectedTags = $('#tag_selection p.chosen')
+		.map(function() {
+			return $(this).text();
+		})
+		.get();
+	
+	//Get selected sort Option
+	const sort = $('#sort_select').val();
+	
+	//build API URL
+	let url = '/api/projects';
+	const params = [];
+	
+	
+	if (selectedTags.length > 0) {
+		params.push(`tags=${encodeURIComponent(selectedTags.join(','))}`);
+	}
+
+	if (sort) {
+		params.push(`sort=${encodeURIComponent(sort)}`);
+	}
+
+	if (params.length > 0) {
+		url += `?${params.join('&')}`;
+	}
+
+		
+		
+	//fetch projects (Always)
+	$.getJSON(url, function (projects){
+		//clear existing projects
+		$('#project_browser').empty();
+		
+		//render projects
+		projects.forEach(function (project) {
+			const projectDiv = $('<div></div>')
+				.addClass('project_card')
+					
+				
+			const title = $('<h2></h2>')
+				.addClass('project_name')
+				.text(project.title);
+	
+			projectDiv.append(title);
+				
+			$('#project_browser').append(projectDiv);
+
+				
+			});
+		});
+	}

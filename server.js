@@ -128,8 +128,14 @@ app.get('/api/projects', (req, res) => {
 // GET /api/tags
 // Returns all unique tags that exist in the database.
 // The frontend calls this once on load to build the tag filter buttons.
+//DISTINCT makes sure they only appear once, JOIN projects_tag ensures that is needs to be linked to one project
 app.get('/api/tags', (req, res) => {
-  const tags = db.prepare(`SELECT name FROM tags ORDER BY name ASC`).all();
+  const tags = db.prepare(`
+	SELECT DISTINCT t.name
+	FROM tags t
+	JOIN project_tags pt ON t.id = pt.tag_id 
+	ORDER BY name ASC
+	`).all();
   res.json(tags.map(t => t.name)); // Return a simple array of strings: ["design", "web", ...]
 });
 

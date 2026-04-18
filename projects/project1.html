@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =====================================================================
+    PROJECT METADATA
+    These <meta> tags are read by database/seed.js to register this project 
+	in the database. 
+  ====================================================================== -->
+  
+  <meta name="project-title"     content="UX Redesign of Student Portal">
+  <meta name="project-date"      content="2025-06">
+  <meta name="project-thumbnail" content="/images/project1.png">
+  <meta name="project-summary"   content="A user-centered redesign of a university student portal based on usability testing.">
+  <meta name="project-tags"      content="ux, user research, prototyping">
+
+  <title>Example Project</title>
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <!-- Shared navigation, can be loaded dynamically from /public/components/nav.html -->
+  <div id="nav-placeholder"></div>
+
+  <!-- =====================================================================
+    PROJECT CONTENT
+	Everything below here is completely up to the project, defining
+	its own layout and structure. 
+  ====================================================================== -->
+
+  <main class="project-page"> <!-- We probably want to figure out some classes like this, to streamline layout -->
+    <h1>Example Project</h1>
+    <p class="project-date">January 2026</p>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Describe the project here.</p>
+    </section>
+
+  </main>
+
+  <!-- Example of how we can load the shared nav into the placeholder above -->
+  <script>
+    fetch('/components/nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('nav-placeholder').innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>
