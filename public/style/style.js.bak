@@ -73,7 +73,7 @@ $(document).ready(function () {
 				
 			//project link
 			const project_card = $('<a></a>')
-				.attr('href', "projects/" + project.slug)
+				.attr('href', "projects" + project.slug)
 				
 			project_card.append(projectDiv)
 					

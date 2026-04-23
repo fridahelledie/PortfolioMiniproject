@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>Portefolio</title>
+	<link rel="stylesheet" href="/style/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="/public/style/style.js"> </script>
+
+</head>
+
+<body>
+	<div class="top_bar">
+		<h1>Portefolie site</h1>
+		
+		<nav>
+		<li><a href = "#ProfilePic"> About me </a></li>
+		<li><a href = "#project_section"> Portfolio </a></li>
+		<li><a href = "#footer"> Contact </a></li>
+		</nav>
+		
+	</div>
+	
+	<div class="box-container" id="about_me">
+		<div class="left-box">
+			<img src="/images/profile_pic.png" id="portrait">
+		</div>
+		
+		<div class="right-box">Right content
+		<p>
+			About me, i am very interesting
+		</p>
+		
+		</div>
+	</div>
+		
+		
+	</div>
+	<div id="project_section">
+		<h2> Projects </h2>
+	
+	<div id="controls_row">
+	
+		<div id="tag_selection"></div>
+		
+		<div id="sort_controls">
+			<label for="sort_select">Sort by:</label>
+			<select id="sort_select">
+			<option value="date">Newest</option>
+			<option value="name">Name (A–Z)</option>
+		</select>
+		</div>
+	</div>
+
+		
+		<div id="project_browser">
+			
+		</div>
+	</div>
+	
+	<footer id="footer">
+	<div class="footer-column">
+        <h3>Contact</h3>
+        <p>Email: example@mail.com</p>
+        <p>Phone: 12345678</p>
+    </div>
+
+    <div class="footer-column">
+        <h3>Links</h3>
+        <p>Portfolio</p>
+        <p>GitHub</p>
+        <p>LinkedIn</p>
+    </div>
+	
+	
+	<div class="footer-column">
+        <h3>Location</h3>
+        <p>Aalborg, DK</p>
+    </div>
+
+
+</footer>
+</body>
+</html>

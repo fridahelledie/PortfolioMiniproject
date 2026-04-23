@@ -9,12 +9,11 @@
     These <meta> tags are read by database/seed.js to register this project 
 	in the database. 
   ====================================================================== -->
-  
-  <meta name="project-title"     content="UX Redesign of Student Portal">
-  <meta name="project-date"      content="2025-06">
-  <meta name="project-thumbnail" content="/images/project1.png">
-  <meta name="project-summary"   content="A user-centered redesign of a university student portal based on usability testing.">
-  <meta name="project-tags"      content="ux, user research, prototyping">
+<meta name="project-title"     content="Reactive Light & Sound Installation">
+<meta name="project-date"      content="2024-11">
+<meta name="project-thumbnail" content="/images/project2.png">
+<meta name="project-summary"   content="An interactive installation reacting to audience movement using sound and light.">
+<meta name="project-tags"      content="Python, sound design, web ">
 
   <title>Example Project</title>
 
@@ -33,8 +32,8 @@
   ====================================================================== -->
 
   <main class="project-page"> <!-- We probably want to figure out some classes like this, to streamline layout -->
-    <h1>Project 1</h1>
-    <p class="project-date">June 2025</p>
+    <h1>Example Project</h1>
+    <p class="project-date">January 2026</p>
 
     <section>
       <h2>Overview</h2>
